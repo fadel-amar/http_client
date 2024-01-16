@@ -3,18 +3,35 @@
 {% block title %}Hello PostController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/omarf/Documents/Projets/symfonyAPI/http_client/src/Controller/PostController.php'|file_link(0) }}">src/Controller/PostController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/omarf/Documents/Projets/symfonyAPI/http_client/templates/post/index.html.twig'|file_link(0) }}">templates/post/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="example-wrapper">
+
+        <h1>Liste de tous les posts</h1>
+
+
+        {% for post in posts %}
+            <ul>
+                <li>{{ post.contenu }} </li>
+                <li>{{ post.titre }} </li>
+          {#      <li>{{ post.categorie }} </li>
+                <li>{{ post.user }} </li>#}
+            </ul>
+
+        {% endfor %}
+
+
+    </div>
 {% endblock %}
