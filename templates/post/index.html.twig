@@ -19,18 +19,20 @@
 
     <div class="example-wrapper">
 
-        <h1>Liste de tous les posts</h1>
 
 
+        <h1 style="margin-bottom: 50px">Voici la liste des posts</h1>
         {% for post in posts %}
-            <ul>
-                <li>{{ post.contenu }} </li>
-                <li>{{ post.titre }} </li>
-          {#      <li>{{ post.categorie }} </li>
-                <li>{{ post.user }} </li>#}
-            </ul>
-
+            <div>
+                <h2>Titre : {{ post.titre }}</h2>
+                <div>Catégorie : {{ post.categorie}}</div>
+                <div>Id : {{ post.id }}</div>
+                <div>Contenu : {{ post.contenu }}</div>
+                <div>Email : {{ post.user }}</div>
+            </div>
+            <br>
         {% endfor %}
+
 
 
     </div>

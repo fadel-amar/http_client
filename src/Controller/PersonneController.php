@@ -20,10 +20,12 @@ class PersonneController extends AbstractController
         $form = $this->createForm(PersonneType::class, $personne);
 
         $form->handleRequest($request->getCurrentRequest());
-        if($form->isSubmitted()) {
+        if($form->isSubmitted() && $form->isValid()) {
             // Traitement de donnés
-            dd($personne);
-            $this->redirectToRoute("/");
+
+            // Ajouter une message flash
+            $this->addFlash("success", "La personne a bien été enregistré");
+            return $this->redirectToRoute("app_accueil");
         }
 
 

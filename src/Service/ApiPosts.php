@@ -6,7 +6,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ApiPosts
 {
-    private $httpClient;
+    private HttpClientInterface $httpClient;
 
     /**
      * @param HttpClientInterface $httpClient
@@ -19,13 +19,13 @@ class ApiPosts
 
     public function getPosts() {
 
+
         $reponseApi = $this->httpClient->request(
             "GET",
             "http://172.16.220.1:8000/api/posts");
 
         return $reponseApi->toArray();
     }
-
 
 
 }

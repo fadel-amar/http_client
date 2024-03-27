@@ -13,7 +13,12 @@ class PersonneType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', \Symfony\Component\Form\Extension\Core\Type\TextType::class)
+            ->add('nom', \Symfony\Component\Form\Extension\Core\Type\TextType::class, [
+                'label'=> "nom de la personne",
+                "attr" =>  [
+                    "placeholder"=>"nom present sur votre CNI"
+            ]],
+            )
             ->add('prenom', \Symfony\Component\Form\Extension\Core\Type\TextType::class)
         ;
     }
